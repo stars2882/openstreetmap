@@ -8,7 +8,7 @@ public class RunnerTest {
 
     @RunWith(Cucumber.class)
     @CucumberOptions(
-            features = "src/test/resources/checkRouteKyivCambridge.feature",
+            features = "src/test/resources",
             glue = "src/test/stepdefinitions"
     )
     public class RunnerTests {

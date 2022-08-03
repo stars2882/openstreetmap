@@ -25,7 +25,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@id='sidebar']//select[@name='routing_engines']")
     private WebElement dropDownListTransport;
 
-
     @FindBy(xpath = "//div[@id='sidebar']//input[@class='routing_go btn btn-sm btn-primary']")
     private WebElement btnGo;
 
@@ -44,12 +43,12 @@ public class HomePage extends BasePage {
         fieldRouteTo.sendKeys(keyword);
     }
 
-    public void selectTransport(final String keyword){
+    public void selectTransport(final String keyword) {
+        waitVisibilityOfElement(100, dropDownListTransport);
         dropDownListTransport.click();
         DriverManager
                 .getDriver()
-                .findElement(By.xpath("//div[@id='sidebar']//option[contains(text(),'"+keyword+"')]")).click();
-
+                .findElement(By.xpath("//div[@id='sidebar']//option[contains(text(),'" + keyword + "')]")).click();
     }
 
     public void clickBtnGo() {
@@ -57,8 +56,8 @@ public class HomePage extends BasePage {
         btnGo.click();
     }
 
-    public boolean checkDistance(final String keyword){
-        waitVisibilityOfElement(200,distance);
-      return distance.getText().contains(keyword);
+    public boolean checkDistance(final String keyword) {
+        waitVisibilityOfElement(200, distance);
+        return distance.getText().contains(keyword);
     }
 }

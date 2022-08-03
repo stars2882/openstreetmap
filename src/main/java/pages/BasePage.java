@@ -15,12 +15,6 @@ public class BasePage {
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
-
-    public void waitForPageLoadComplete(long timeToWait) {
-        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeToWait)).until(
-                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-    }
-
     public void waitVisibilityOfElement(long timeToWait, WebElement element) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeToWait));
         wait.until(ExpectedConditions.visibilityOf(element));

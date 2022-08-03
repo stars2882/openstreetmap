@@ -2,7 +2,7 @@ Feature: Test from the task
 
   Scenario Outline: Check distance
 
-    Given User opens home page is site
+    Given User opens home page
     And User click button find a route between two points
     And Enter the starting point in the field '<firstPoint>'
     And Enter the finishing point in the field '<secondPoint>'
@@ -12,5 +12,5 @@ Feature: Test from the task
 
 
     Examples:
-      | firstPoint     | secondPoint | kindOfTransport  |distance|
-      | Радищева, Київ | Кембридж    | Велосипед (OSRM) |2423km   |
+      | firstPoint     | secondPoint | kindOfTransport | distance |
+      | Радищева, Київ | Кембридж    | Bicycle (OSRM)  | 2423     |

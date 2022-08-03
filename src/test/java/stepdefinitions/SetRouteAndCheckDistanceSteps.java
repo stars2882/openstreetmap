@@ -6,11 +6,12 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
 import static manager.PageFactoryManager.HOME_PAGE;
+
 public class SetRouteAndCheckDistanceSteps {
 
-    @Given("User opens home page is site")
-    public void userOpensHomePageIsSite() {
-       HOME_PAGE.openHomePage();
+    @Given("User opens home page")
+    public void userOpensHomePage() {
+        HOME_PAGE.openHomePage();
     }
 
     @And("User click button find a route between two points")
@@ -19,12 +20,12 @@ public class SetRouteAndCheckDistanceSteps {
     }
 
     @And("Enter the starting point in the field {string}")
-    public void enterTheStartingPointInTheFieldFirstPoint(final String keyword) {
+    public void enterTheStartingPoint(final String keyword) {
         HOME_PAGE.enterFirstPoint(keyword);
     }
 
     @And("Enter the finishing point in the field {string}")
-    public void enterTheFinishingPointInTheFieldSecondPoint(final String keyword) {
+    public void enterTheFinishingPoint(final String keyword) {
         HOME_PAGE.enterSecondPoint(keyword);
     }
 
